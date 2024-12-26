@@ -4,19 +4,21 @@ import "./Item.css";
 const Item = ({
   id,
   item,
+  category, // Add category
   list,
   setEdit,
   setEditId,
   setItem,
+  setCategory, // New state setter for category
   setList,
   complete,
 }) => {
-  //Delete Item
+  // Delete Item
   const remove = (id) => {
     setList(list.filter((el) => el.id !== id));
   };
 
-  //Mark Item completed
+  // Mark Item completed
   const handleComplete = (id) => {
     setList(
       list.map((item) => {
@@ -31,30 +33,27 @@ const Item = ({
     );
   };
 
-  //Edit Item
+  // Edit Item
   const handleItem = (id) => {
     const editItem = list.find((el) => el.id === id);
     setItem(editItem.item);
+    setCategory(editItem.category); // Set the current category
     setEdit(true);
     setEditId(id);
   };
 
   return (
     <div className="item">
-      <input
-        type="text"
-        value={item}
-        style={{
-          border: "none",
-          outline: "none",
-          backgroundColor: "transparent",
-          color: "white",
-          fontSize: "20px",
-        }}
-        className={complete ? "complete" : ""}
-      />
+      <div style={{ flexGrow: 1 }}>
+        <input
+          type="text"
+          value={item}
+          readOnly
+          className={complete ? "complete" : ""}
+        />
+        <p style={{ color: "gray", fontSize: "14px" }}>Category: {category}</p>
+      </div>
       <img
-        style={{ cursor: "pointer" }}
         src="https://img.icons8.com/emoji/36/000000/pencil-emoji.png"
         onClick={() => {
           const confirmBox = window.confirm("Do you want to edit this item?");
@@ -65,14 +64,11 @@ const Item = ({
         alt="edit item"
       />
       <img
-        style={{ cursor: "pointer" }}
         onClick={() => handleComplete(id)}
         src="https://img.icons8.com/offices/40/000000/checked-2--v2.png"
         alt="mark item complete"
       />
-
       <img
-        style={{ cursor: "pointer" }}
         onClick={() => {
           const confirmBox = window.confirm(
             "Are you sure you want to delete this item?"
@@ -87,4 +83,5 @@ const Item = ({
     </div>
   );
 };
+
 export default Item;

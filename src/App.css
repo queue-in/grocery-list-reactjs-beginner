@@ -10,7 +10,7 @@
 }
 
 h1{
-  text-shadow : 3px 3px 0px #222, 5px 5px 0px #378fe5; color : #007ACE; 
+  text-shadow : 3px 3px 0px #bc0000, 5px 5px 0px #b40075; color : #ff9900; 
   font-size: 45px;
 }
 .App-logo {
@@ -32,7 +32,7 @@ h1{
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
@@ -54,7 +54,7 @@ h1{
   height: 2.3rem;
   border-radius: 0.5em;
   border: none;
-  color: #fff;
+  color: #f9f3f3;
   background: #8a2387;
   background: -webkit-linear-gradient(
     to right,
@@ -71,7 +71,6 @@ h1{
   outline: none;
   padding: 0.3rem 1.8rem 0.3rem 1.8rem;
 }
-
 .btn:hover {
   filter: brightness(110%);
   border: none;

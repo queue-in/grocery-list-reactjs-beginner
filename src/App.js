@@ -11,8 +11,8 @@ const arr = () => {
 
 function App() {
   const [item, setItem] = useState("");
-  const [quantityWithUnit, setQuantityWithUnit] = useState(""); 
-  const [category, setCategory] = useState("Fruit"); 
+  const [quantityWithUnit, setQuantityWithUnit] = useState(""); // Combined field for quantity and unit
+  const [category, setCategory] = useState("Fruit"); // Add state for category
   const [edit, setEdit] = useState(false);
   const [editId, setEditId] = useState(null);
   const [list, setList] = useState(arr);
@@ -24,8 +24,8 @@ function App() {
     const newItem = {
       id: uuidv4(),
       item: item,
-      quantityWithUnit: quantityWithUnit, 
-      category: category, 
+      quantityWithUnit: quantityWithUnit, // Save as one field
+      category: category, // Include category in item
       complete: false,
     };
 
@@ -33,7 +33,7 @@ function App() {
       setList([...list, newItem]);
       setItem("");
       setQuantityWithUnit("");
-      setCategory("Fruit"); 
+      setCategory("Fruit"); // Reset category
       setError("");
     } else if (item && item.length <= 25 && edit && editId) {
       setList(
@@ -43,7 +43,7 @@ function App() {
               ...el,
               item: item,
               quantityWithUnit: quantityWithUnit,
-              category: category, 
+              category: category, // Update category during edit
             };
           }
           return el;
@@ -51,7 +51,7 @@ function App() {
       );
       setItem("");
       setQuantityWithUnit("");
-      setCategory("Fruit"); 
+      setCategory("Fruit"); // Reset category
       setEditId(null);
       setEdit(false);
       setError("");
@@ -116,8 +116,8 @@ function App() {
             key={el.id}
             id={el.id}
             item={el.item}
-            quantityWithUnit={el.quantityWithUnit} 
-            category={el.category} 
+            quantityWithUnit={el.quantityWithUnit} // Pass combined field
+            category={el.category} // Pass category
             list={list}
             setList={setList}
             setEdit={setEdit}

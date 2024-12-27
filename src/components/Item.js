@@ -62,7 +62,7 @@ const Item = ({
     setEditingItem(false);
   };
 
-  // Handle quantity + unit editing
+  // edit the quantity+ unit functionaliy
   const handleQuantityWithUnitEdit = () => {
     setEditingQuantityWithUnit(true);
   };
@@ -187,7 +187,7 @@ const Item = ({
         title="Edit item"
       />
 
-      {/* Delete Item (via trash icon) */}
+      {/* Delete Item (uses trash icon) */}
       <FontAwesomeIcon
         icon={faTrashAlt}
         style={{ cursor: "pointer", marginLeft: "10px", color: "#dc3545" }}

@@ -1,4 +1,6 @@
 # Grocery List
+## Original repo
+https://github.com/kritika27/grocery-list-reactjs-beginner
 
 ## Description
 

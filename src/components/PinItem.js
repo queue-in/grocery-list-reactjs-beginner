@@ -9,7 +9,7 @@ const PinItem = ({ id, list, setList }) => {
     // Toggle the pinned state for the item
     setIsPinned(!isPinned);
     
-    // Move the item with the given id to the top of the list if pinned
+    // pinned item should stay on top
     if (!isPinned) {
       setList((prevList) => {
         const itemToPin = prevList.find((el) => el.id === id);
